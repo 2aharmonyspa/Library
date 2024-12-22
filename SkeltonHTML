@@ -5,37 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library App</title>
 </head>
-<body style=" color: red">
+<body style="color: red;">
 
     <h1>Welcome to my website</h1>
-        <p>Here you can keep track of books you have or havent read</p>
-        <p>I hope you enjoy it</p>
-    </body>
-    </html>
+    <p>Here you can keep track of books you have or haven't read</p>
+    <p>I hope you enjoy it</p>
 
-    
-</body>
-</html>
-
-
+    <!-- Image Link -->
     <a href="https://en.wikipedia.org/wiki/Library">
         <img src="images/School Library Mural.jpg" alt="School Library Mural">
-    
     </a>
 
-
-</body>
-<button> onclick = "Click if you read()" </button>
-<p id ="test" Didn't Read</p>
-
-<script>
-    function clickifyouread(){
-        document.getElementbyId("test").innerHTML = "Read"
-    }
-</script>
+    <!-- Button -->
+    <button onclick="clickifyouread()">Click if you read</button>
     
+    <!-- Paragraph to update -->
+    <p id="test">Didn't Read</p>
 
+    <!-- JavaScript Function -->
+    <script>
+        function clickifyouread() {
+            document.getElementById("test").innerHTML = "Read";
+        }
+    </script>
 
-    
 </body>
 </html>
