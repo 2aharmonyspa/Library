@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-
-
-<img src="images/emoticons/School Library Mural.jpg" alt="hi" class="inline"/>
-
 <html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+</head>
+<body style=" color: red">
+
+    <h1>Welcome to my website</h1>
+        <p>Here you can keep track of books you have or havent read</p>
+        <p>I hope you enjoy it</p>
+    </body>
+    </html>
+
+    
+</body>
+</html>
 
 
+    <a href="https://en.wikipedia.org/wiki/Library">
+        <img src="images/School Library Mural.jpg" alt="School Library Mural">
+    
+    </a>
 
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
 
+</body>
+<button> onclick = "Click if you read()" </button>
+<p id ="test" Didn't Read</p>
+
+<script>
+    function clickifyouread(){
+        document.getElementbyId("test").innerHTML = "Read"
+    }
+</script>
+    
+
+
+    
 </body>
 </html>
