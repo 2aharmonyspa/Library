@@ -4,29 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library App</title>
+
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Internal CSS for background image -->
     <style>
-        /* Set the background image */
-        <body background=
-"https://pikbest.com/backgrounds/ultra-hd-exquisite-texture-abstract-beige-tan-background-with-rich-brown-hues_9983982.html>
-    <h1>Background Image with the Help of HTML</h1>
-    <p>
-        The html body background attribute 
-        is used to add background image
-    </p>
-</body>
-
+        body {
+            background-image: url('https://pikbest.com/backgrounds/ultra-hd-exquisite-texture-abstract-beige-tan-background-with-rich-brown-hues_9983982.html');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
     </style>
-
-    <html>
-<head>
-<title›Link CSS to HTML</title›
-‹link rel="stylesheet"
-type="text/css" href="style.css">
-</head>
-    
 </head>
 <body>
-
     <h1>Welcome to my website</h1>
     <p>Here you can keep track of books you have or haven't read</p>
     <p>I hope you enjoy it</p>
@@ -41,23 +33,22 @@ type="text/css" href="style.css">
     
     <!-- Paragraph to update -->
     <p id="test">Didn't Read</p>
-     
 
     <!-- JavaScript Function -->
     <script>
         function clickifyouread() {
             document.getElementById("test").innerHTML = "Read";
-         
         }
     </script>
     
-<form action="/action_page.php">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" value="John"><br><br>
-  <input type="submit" value="Submit">
-</form>
-    
+    <!-- Form -->
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" value="John"><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
+
 
 
