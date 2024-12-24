@@ -13,40 +13,96 @@
         body {
             background-color: tan;
         }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
     </style>
 </head>
 <body>
-    <!-- JavaScript File -->
-    <script src="MainContent.js"></script>
+    <h1 id="Library">Library</h1>
+    <table id="bookTable">
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Pages</th>
+                <th>Read Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Books will be dynamically inserted here -->
+        </tbody>
+    </table>
 
     <h1>Welcome to my website</h1>
     <p>Here you can keep track of books you have or haven't read</p>
     <p>I hope you enjoy it</p>
 
     <!-- Image Link -->
-    <a href="https://en.wikipedia.org/wiki/Library"> 
+    <a href="https://en.wikipedia.org/wiki/Library">
         <img src="images/School Library Mural.jpg" alt="School Library Mural">
     </a>
 
-    <!-- Button -->
-    <button onclick="clickifyouread()">Click if you read</button>
-    
-    <!-- Paragraph to update -->
-    <p id="test">Didn't Read</p>
+    <!-- Form to add books -->
+    <form id="bookForm">
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" placeholder="Enter author's name"><br><br>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" placeholder="Enter book title"><br><br>
+        <label for="pages">Pages:</label><br>
+        <input type="number" id="pages" placeholder="Enter number of pages"><br><br>
+        <label for="read">Read?</label><br>
+        <select id="read">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <!-- JavaScript to handle dynamic content -->
+    <script src="MainContent.js"></script>
 
     <!-- JavaScript Function -->
     <script>
+        // Function to handle form submission and add a new book to the table
+        document.getElementById('bookForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get the values from the form
+            const author = document.getElementById('author').value;
+            const title = document.getElementById('title').value;
+            const pages = document.getElementById('pages').value;
+            const readStatus = document.getElementById('read').value;
+
+            // Create a new row in the table for the new book
+            const tableBody = document.querySelector('#bookTable tbody');
+            const newRow = document.createElement('tr');
+
+            // Create and append the table cells for this new book
+            newRow.innerHTML = `
+                <td>${author}</td>
+                <td>${title}</td>
+                <td>${pages}</td>
+                <td>${readStatus}</td>
+            `;
+
+            // Append the new row to the table
+            tableBody.appendChild(newRow);
+
+            // Optionally, clear the form fields
+            document.getElementById('bookForm').reset();
+        });
+
+        // Example of the "click if you read" functionality
         function clickifyouread() {
             document.getElementById("test").innerHTML = "Read";
         }
     </script>
-    
-    <!-- Form -->
-    <form action="/action_page.php">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" value="John"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+
+    <!-- Paragraph to update -->
+    <p id="test">Didn't Read</p>
 </body>
 </html>
 
